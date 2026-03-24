@@ -94,10 +94,8 @@ const Pricing = () => {
           name: 'Cloud Security Foundation',
           price: 2500,
           period: 'one-time',
-          description: 'Secure AWS, Azure, or GCP environments with essential security controls',
-          pricingNote: 'Fixed scope • Clear deliverables • No hidden costs',
-          details: 'Best for: Early-stage teams | Typical delivery: 1-2 weeks',
-          primaryCta: 'Get Started',
+          description: 'Secure AWS/Azure/GCP setup (IAM, logging, MFA, baseline hardening)',
+          details: 'Ideal for startups under 20 people.',
           features: [
             'IAM configuration & MFA',
             'Logging & monitoring baseline',

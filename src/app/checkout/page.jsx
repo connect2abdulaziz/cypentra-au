@@ -22,10 +22,10 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
 // Package data mapping (from packages page)
 const PACKAGE_DATA = {
-  1: { title: 'Cloud Security Starter Pack', price: 999, priceUnit: 'One-time project' },
+  1: { title: 'Cloud Security Foundation', price: 2500, priceUnit: 'One-time project' },
   2: { title: 'GDPR & Privacy Quick-Setup', price: 599, priceUnit: 'Pre-defined deliverables' },
-  3: { title: 'vCISO Lite (On Demand)', price: 499, priceUnit: '/month' },
-  7: { title: 'SOC 2 Lite Prep', price: 3999, priceUnit: 'One-time project' }
+  3: { title: 'vCISO Advisory (Lite)', price: 3000, priceUnit: '/month' },
+  7: { title: 'SOC 2 / ISO 27001 Gap Assessment', price: 3500, priceUnit: 'One-time project' }
 }
 
 // Terms Modal Component
@@ -877,7 +877,9 @@ function CheckoutPageContent() {
       return cartItems.map(item => ({
         id: item.id,
         title: item.title,
-        price: parseFloat(item.price.replace(/[^0-9.]/g, '')) || 0,
+        price: typeof item.price === 'number'
+          ? item.price
+          : parseFloat(String(item.price || '').replace(/[^0-9.]/g, '')) || 0,
         priceUnit: item.priceUnit
       }))
     }
