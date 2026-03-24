@@ -3,7 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import { CartProvider } from "@/contexts/CartContext";
 import Chatbot from "@/components/Chatbot/Chatbot";
-import WhatsAppFloatingButton from "@/components/Common/WhatsAppFloatingButton";
+import WhatsAppFloatingButton from "@/components/common/WhatsAppFloatingButton";
 
 // Cyber font for headings (commented out)
 // import { Orbitron } from "next/font/google";
