@@ -9,6 +9,7 @@ const Pricing = () => {
   const [hoveredCard, setHoveredCard] = useState(null)
   const [expandedDetails, setExpandedDetails] = useState({})
   const { addToCart, isInCart, getCartCount } = useCart()
+  const formatPrice = (price) => new Intl.NumberFormat('en-US').format(price)
 
   const toggleDetails = (itemId) => {
     setExpandedDetails(prev => ({
@@ -43,7 +44,7 @@ const Pricing = () => {
       addToCart({
         id: packageId,
         title: item.name,
-        price: `$${item.price}`,
+        price: `€${formatPrice(item.price)}`,
         priceUnit: item.period === 'one-time' ? 'One-time project' : '/month',
         duration: item.details || ''
       })
@@ -85,76 +86,83 @@ const Pricing = () => {
   const packages = [
     {
       id: 'lite',
-      category: 'Lite Packages',
-      description: 'Quick-start solutions to build your security foundation.',
+      category: 'FOUNDATION SERVICES',
+      description: 'For teams starting their security and compliance journey',
       items: [
         {
           id: 'cloud-starter',
-          name: 'Cloud Security Starter Pack',
-          price: 999,
+          name: 'Cloud Security Foundation',
+          price: 2500,
           period: 'one-time',
-          description: 'Secure AWS/Azure/GCP setup (IAM, logging, MFA, baseline hardening)',
-          details: 'Ideal for startups under 20 people.',
+          description: 'Secure AWS, Azure, or GCP environments with essential security controls',
+          pricingNote: 'Fixed scope • Clear deliverables • No hidden costs',
+          details: 'Best for: Early-stage teams | Typical delivery: 1-2 weeks',
+          primaryCta: 'Get Started',
           features: [
-            'IAM configuration & MFA setup',
+            'IAM configuration & MFA',
             'Logging & monitoring baseline',
             'Security hardening checklist',
             'Cloud architecture review'
           ],
-          detailedDescription: 'Our Cloud Security Starter Pack strengthens your AWS, Azure, or GCP environment using best-practice frameworks such as CIS and NIST. We implement secure IAM governance, network segmentation, encryption, and continuous monitoring to eliminate misconfigurations and unauthorized access. This setup ensures your cloud architecture is compliant, auditable, and ready to scale securely — a solid foundation before SOC 2 or ISO 27001 readiness.'
+          detailedDescription: 'Secure your cloud environment with a fixed-scope engagement focused on identity, visibility, and baseline hardening. You will receive clear deliverables and practical guidance to improve security quickly without slowing your team.'
         },
         {
           id: 'soc2-lite-prep',
-          name: 'SOC 2 Lite Prep',
-          price: 3999,
+          name: 'SOC 2 / ISO 27001 Gap Assessment',
+          price: 3500,
           period: 'one-time',
-          description: 'Essential SOC 2 compliance preparation for startups and small teams.',
+          description: 'Understand your current posture and what’s required for compliance',
+          pricingNote: 'Fixed scope • Clear deliverables • No hidden costs',
+          details: 'Best for: Teams preparing for compliance | Typical delivery: 2-3 weeks',
+          primaryCta: 'Request Assessment',
           features: [
-            'SOC 2 Gap Assessment',
-            'Core Policy Bundle',
-            'Risk & Evidence Templates',
-            'Readiness Summary Report'
+            'Gap analysis against SOC 2 / ISO 27001',
+            'Risk identification',
+            'Actionable roadmap',
+            'Summary report'
           ],
-          detailedDescription: 'Prepare your company for SOC 2 compliance with essential policies, risk controls, and documentation templates — all tailored to startups and small teams that need quick readiness before onboarding auditors.\n\n• SOC 2 Gap Assessment – Identify missing controls against the five Trust Services Criteria\n• Core Policy Bundle – Security, access, incident, and vendor management policies\n• Risk & Evidence Templates – Pre-built forms for risk register and control evidence\n• Readiness Summary Report – Action plan showing what\'s complete and what remains for full SOC 2\n\nOur SOC 2 Lite Prep package provides the foundation your organization needs to begin its SOC 2 Type I or Type II journey. We conduct a structured gap analysis against the AICPA Trust Services Criteria, identify control deficiencies, and create tailored security policies for your environment. You\'ll receive policy templates, risk documentation, and an implementation checklist that map directly to auditor expectations — saving weeks of preparation time. By the end of this engagement, your team will have: • Defined security and compliance ownership • Documented policies aligned with SOC 2 requirements • A clear remediation roadmap toward full SOC 2 Readiness. Ideal for SaaS startups, FinTech, or B2B companies that plan to complete a formal audit within 3–6 months.'
+          detailedDescription: 'This service identifies your current compliance gaps and translates them into a clear, prioritized plan. You will understand exactly what needs to be implemented for SOC 2 or ISO 27001 readiness and how to move forward with confidence.'
         },
         {
           id: 'vciso-lite',
-          name: 'vCISO Lite',
-          price: 499,
+          name: 'vCISO Advisory (Lite)',
+          price: 3000,
           period: 'monthly',
-          description: '4h/month advisory via Zoom/Meet + IR Plan + Policies',
+          description: 'Ongoing security guidance and support',
+          pricingNote: 'Fixed scope • Clear deliverables • No hidden costs',
+          details: 'Best for: Growing teams needing ongoing guidance',
+          primaryCta: 'Get Started',
           features: [
-            '4 hours monthly advisory',
-            'Incident response plan',
-            'Policy templates & guidance',
+            'Monthly advisory sessions',
+            'Policy guidance',
+            'Risk & incident support',
             'Priority email support'
           ],
-          detailedDescription: 'Our vCISO Lite program provides ongoing cybersecurity leadership without the cost of a full-time CISO. You get 4 hours per month of strategic advisory, policy development, and incident response planning — ideal for startups and SMBs that need professional guidance to stay compliant and secure. We help you implement governance controls, risk management frameworks, and ensure your policies align with SOC 2, ISO 27001, and GDPR standards.'
+          detailedDescription: 'Get ongoing expert support to guide policy decisions, manage risk, and strengthen your security posture each month. This is ideal for growing teams that need strategic direction without hiring a full-time security leader.'
         }
       ],
       highlighted: false
     },
     {
       id: 'advanced',
-      category: 'Advanced Packages',
-      description: 'Comprehensive readiness and strategic support.',
+      category: 'ADVANCED SERVICES',
+      description: 'End-to-end compliance and security support tailored to your organization',
       items: [
         {
           id: 'soc2-readiness',
-          name: 'SOC 2 Readiness Program',
+          name: 'SOC 2 / ISO 27001 Readiness Program',
           price: null,
           period: 'consultation',
-          description: 'Complete SOC 2 Type II preparation with gap analysis and documentation',
-          details: 'Book a free Zoom meeting to discuss your needs.',
+          description: 'End-to-end preparation for audit readiness and compliance',
+          pricingNote: 'End-to-end compliance preparation',
+          primaryCta: 'Book a Compliance Call',
           features: [
-            'Full gap analysis & remediation',
-            'Policy & procedure development',
-            'Control implementation support',
-            'Pre-audit readiness assessment',
-            'Vendor management framework',
-            'Continuous monitoring setup'
+            'Full gap remediation',
+            'Policy & control implementation',
+            'Evidence collection',
+            'Audit preparation'
           ],
-          detailedDescription: 'Our SOC 2 Readiness Program provides full end-to-end preparation for SOC 2 Type I and Type II audits. We conduct an in-depth gap analysis across your controls, policies, and infrastructure, then guide your team through implementation and documentation. You\'ll receive complete evidence mapping, continuous monitoring setup, and pre-audit review to ensure successful auditor validation. Ideal for SaaS, FinTech, and enterprise clients pursuing formal compliance certification.'
+          detailedDescription: 'Complete readiness support from remediation through audit preparation. We help your team build and operationalize controls, collect evidence, and prepare confidently for formal compliance assessments.'
         },
         {
           id: 'enterprise-vciso',
@@ -162,33 +170,30 @@ const Pricing = () => {
           price: null,
           period: 'consultation',
           description: 'Dedicated security leadership and strategic guidance for your organization',
-          details: 'Monthly retainer',
+          pricingNote: 'Dedicated security leadership and strategy',
+          primaryCta: 'Book a Compliance Call',
           features: [
-            'Dedicated vCISO support',
-            'Strategic security roadmap',
+            'Security roadmap',
             'Board-level reporting',
-            'Incident response leadership',
-            'Security program management',
-            'Compliance oversight (SOC 2, ISO, GDPR)'
+            'Risk & compliance oversight',
+            'Incident response leadership'
           ],
-          detailedDescription: 'Our Enterprise vCISO service delivers dedicated cybersecurity leadership on a continuous basis. We act as your organization\'s Chief Information Security Officer, managing governance, risk, and compliance (GRC) programs, leading incident response, and reporting directly to executive leadership. This includes strategic roadmap development, board-ready metrics, and oversight across SOC 2, ISO 27001, GDPR, and other compliance frameworks. Designed for scaling companies that require full-time security guidance — without full-time overhead.'
+          detailedDescription: 'Access executive-level security leadership with ongoing strategic guidance, governance oversight, and reporting. This service supports scaling organizations that need mature security direction and accountability.'
         },
         {
           id: 'pen-testing',
-          name: 'Advanced Penetration Testing',
+          name: 'Penetration Testing & Validation',
           price: null,
           period: 'consultation',
-          description: 'Comprehensive security testing with detailed remediation guidance',
-          details: '2–4 weeks assessment',
+          description: 'Validate your security posture before audits and client reviews',
+          primaryCta: 'Book a Compliance Call',
           features: [
-            'External & internal testing',
-            'Web application testing',
-            'API security assessment',
-            'Social engineering testing',
-            'Detailed remediation report',
-            'Post-test consultation'
+            'Web & API testing',
+            'Internal testing',
+            'Security validation',
+            'Detailed reporting'
           ],
-          detailedDescription: 'Our Advanced Penetration Testing engagement combines manual and automated testing to identify, exploit, and remediate vulnerabilities across your cloud, network, and application environments. Following OWASP, MITRE ATT&CK, and NIST 800-115 methodologies, our certified testers perform internal, external, and API assessments with detailed remediation guidance. The engagement concludes with a risk-prioritized report and optional retesting to confirm fixes — ensuring your systems are resilient, compliant, and secure.'
+          detailedDescription: 'Validate real-world resilience with practical testing across your applications and infrastructure. You will receive clear findings and reporting to support remediation and stakeholder confidence.'
         }
       ],
       highlighted: true
@@ -201,11 +206,11 @@ const Pricing = () => {
         {/* Header Section */}
         <div className='flex flex-col items-center text-center gap-4 sm:gap-6 mb-12 sm:mb-16 lg:mb-20'>
           <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight'>
-            Tailored Plans for Your <span className='text-[#0091a4]'>Security Needs</span>
+            Security &amp; Compliance <span className='text-[#0091a4]'>Services</span>
           </h2>
 
           <p className='text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/60 max-w-3xl'>
-            Choose the perfect package to strengthen your security posture. From startups to enterprises, we have a solution for you.
+            Structured services designed to help Australian SaaS and cloud teams achieve security and compliance with clarity and speed.
           </p>
         </div>
 
@@ -257,12 +262,17 @@ const Pricing = () => {
                         <p className={`text-xs sm:text-sm ${pkg.highlighted ? 'text-black/70' : 'text-white/70'}`}>
                           {item.description}
                         </p>
+                        {item.pricingNote && (
+                          <p className={`text-[11px] sm:text-xs mt-1.5 ${pkg.highlighted ? 'text-black/60' : 'text-white/60'}`}>
+                            {item.pricingNote}
+                          </p>
+                        )}
                       </div>
                       {item.price && (
                         <div className='text-right whitespace-nowrap shrink-0'>
-                          <div className='text-2xl sm:text-2xl lg:text-3xl font-bold text-[#0091a4]'>${item.price}</div>
+                          <div className='text-xl sm:text-2xl lg:text-3xl font-bold text-[#0091a4]'>From €{formatPrice(item.price)}</div>
                           <div className={`text-xs ${pkg.highlighted ? 'text-black/60' : 'text-white/60'}`}>
-                            /{item.period}
+                            {item.period === 'monthly' ? '/month' : ''}
                           </div>
                         </div>
                       )}
@@ -328,7 +338,7 @@ const Pricing = () => {
                               <span>Empty Cart First</span>
                             ) : (
                               <>
-                                <span>{isOneTimePackage(item) ? 'Add to Cart' : 'Get Started'}</span>
+                                <span>{item.primaryCta || (isOneTimePackage(item) ? 'Add to Cart' : 'Get Started')}</span>
                                 <ArrowUpRight className='w-3 sm:w-4 h-3 sm:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform' />
                               </>
                             )}
@@ -338,7 +348,7 @@ const Pricing = () => {
                             className='flex-1 py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-transparent border-2 border-[#0091a4] text-[#0091a4] hover:bg-[#0091a4] hover:text-black'
                           >
                             <Download className='w-3 sm:w-4 h-3 sm:h-4' />
-                            <span>Learn More</span>
+                            <span>View Details</span>
                           </button>
                         </>
                       ) : (
@@ -350,28 +360,31 @@ const Pricing = () => {
                               : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
                               }`}
                           >
-                            Book a Zoom Meeting
+                            {item.primaryCta || 'Book a Compliance Call'}
                             <ArrowUpRight className='w-3 sm:w-4 h-3 sm:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform' />
                           </button>
                           <button
                             onClick={() => handleLearnMore(item.id)}
-                            className={`flex-1 py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 ${pkg.highlighted
-                              ? 'bg-transparent border-2 border-black text-black hover:bg-black hover:text-white'
+                            className={`flex-1 py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 ${pkg.highlighted
+                              ? 'bg-transparent border-2 border-black text-black hover:bg-[#0091a4] hover:border-[#0091a4] hover:text-black'
                               : 'bg-transparent border-2 border-white/20 text-white hover:bg-white/10'
                               }`}
                           >
                             <Download className='w-3 sm:w-4 h-3 sm:h-4' />
-                            <span>Learn More</span>
+                            <span>View Details</span>
                           </button>
                         </>
                       )}
                     </div>
 
                     {item.details && (
-                      <p className={`text-xs mt-3 text-center ${pkg.highlighted ? 'text-black/50' : 'text-white/50'}`}>
+                      <p className={`text-xs mt-3 text-center ${pkg.highlighted ? 'text-black/55' : 'text-white/55'}`}>
                         {item.details}
                       </p>
                     )}
+                    <p className={`text-[11px] mt-2 text-center ${pkg.highlighted ? 'text-black/55' : 'text-white/55'}`}>
+                      30-minute call • No obligation • Clear next steps
+                    </p>
                   </div>
                 ))}
               </div>

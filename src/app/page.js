@@ -2,6 +2,7 @@ import Hero from '@/components/Home/Hero/Hero'
 import Navbar from '@/components/Home/NavBar/Navbar'
 import ThreatMap from '@/components/Home/ThreatMap/ThreatMap'
 import Whychooseus from '@/components/Home/Why Choose Us/Whychooseus'
+import Partners from '@/components/Home/Partners/Partners'
 import Testimonial from '@/components/Home/Testimonials/Testimonial'
 import Pricing from '@/components/Home/Pricing/Pricing'
 import FAQ from '@/components/Home/FAQ/FAQ'
@@ -22,6 +23,7 @@ const page = () => {
       </div>
       <ThreatMap />
       <Whychooseus />
+      <Partners />
       <CypentraArchitecture />
       <Pricing />
       {/* <Packages /> */}
