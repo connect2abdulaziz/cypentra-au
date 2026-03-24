@@ -10,6 +10,7 @@ import { useCart } from '@/contexts/CartContext'
 const Packages = () => {
   const [expandedDetails, setExpandedDetails] = useState({})
   const { addToCart, isInCart, getCartCount } = useCart()
+  const formatPrice = (value) => new Intl.NumberFormat('en-US').format(value)
 
   const toggleDetails = (id) => {
     setExpandedDetails(prev => ({
@@ -74,7 +75,7 @@ const Packages = () => {
     {
       id: 1,
       title: 'Cloud Security Foundation',
-      price: 'From €2,500',
+      price: 2500,
       priceUnit: 'One-time project',
       duration: 'Typical delivery: 1-2 weeks',
       description: 'Secure AWS, Azure, or GCP environments with essential security controls',
@@ -95,7 +96,7 @@ const Packages = () => {
     {
       id: 7,
       title: 'SOC 2 / ISO 27001 Gap Assessment',
-      price: 'From €3,500',
+      price: 3500,
       priceUnit: 'One-time project',
       duration: 'Typical delivery: 2-3 weeks',
       description: 'Understand your current posture and what’s required for compliance',
@@ -116,7 +117,7 @@ const Packages = () => {
     {
       id: 3,
       title: 'vCISO Advisory (Lite)',
-      price: 'From €3,000',
+      price: 3000,
       priceUnit: '/month',
       duration: 'Cancel anytime',
       description: 'Ongoing security guidance and support',
@@ -311,7 +312,7 @@ const Packages = () => {
                   <div className='mb-4 sm:mb-5 md:mb-6'>
                     <div className='flex items-baseline gap-1.5 sm:gap-2 mb-1'>
                       <span className='text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent'>
-                        {pkg.price}
+                        {typeof pkg.price === 'number' ? `From €${formatPrice(pkg.price)}` : pkg.price}
                       </span>
                       {pkg.priceUnit.startsWith('/') && (
                         <span className='text-base sm:text-lg text-[#0091a4] font-semibold'>
