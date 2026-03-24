@@ -127,44 +127,55 @@ const Hero = () => {
             ref={titleRef}
             className='text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight'
           >
-            Cybersecurity & <span className='text-[#0091a4]'>Compliance</span> <br /> for Australian SaaS &amp; <span className='text-[#0091a4]'>Cloud Companies</span>
+            Cybersecurity &amp; <span className='text-[#0091a4]'>Compliance</span> for Australian SaaS &amp; <span className='text-[#0091a4]'>Cloud Companies</span>
           </h1>
 
           <p
             ref={subtitleRef}
             className='text-white/70 text-xs sm:text-sm md:text-base lg:text-lg font-light px-2 sm:px-4'
           >
-            Practical cybersecurity and compliance solutions designed for fast-
-            moving teams. <br /> Choose your path: quick setup or full-scale readiness.
+            ISO 27001, SOC 2 &amp; Essential Eight - delivered through a clear roadmap, fixed scope, and expert guidance.
+          </p>
+
+          <p
+            ref={ratingRef}
+            className='text-white/80 text-xs sm:text-sm md:text-base font-medium px-2 sm:px-4'
+          >
+            Helping teams prepare for audits, enterprise clients, and investor due diligence.
           </p>
 
           <div
             ref={buttonsRef}
-            className='flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mt-4 w-full px-2'
+            className='mt-4 w-full px-2 flex flex-col items-center gap-2'
           >
-            <motion.button
-              onClick={() => window.location.href = '/cypentra-consultation'}
-              className='bg-[#0091a4] text-black px-3 sm:px-4 py-2 sm:py-2.5 rounded-full font-bold cursor-pointer text-xs sm:text-sm md:text-base w-full sm:w-auto'
-              whileHover={{
-                boxShadow: '0 10px 30px rgba(0, 145, 164, 0.4)',
-                y: -2
-              }}
-              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-            >
-              Book a Free Security Review
-            </motion.button>
-            <motion.button
-              onClick={() => window.location.href = '/packages'}
-              className='bg-transparent text-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-full font-bold cursor-pointer border border-white text-xs sm:text-sm md:text-base w-full sm:w-auto'
-              whileHover={{
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                borderColor: '#0091a4',
-                y: -2
-              }}
-              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-            >
-              Compare Packages
-            </motion.button>
+            <div className='flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 w-full sm:w-auto'>
+              <motion.button
+                onClick={() => window.location.href = '/cypentra-consultation'}
+                className='bg-[#0091a4] text-black px-3 sm:px-4 py-2 sm:py-2.5 rounded-full font-bold cursor-pointer text-xs sm:text-sm md:text-base w-full sm:w-auto'
+                whileHover={{
+                  boxShadow: '0 10px 30px rgba(0, 145, 164, 0.4)',
+                  y: -2
+                }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+              >
+                Book a Compliance Call
+              </motion.button>
+              <motion.button
+                onClick={() => window.location.href = '/packages'}
+                className='bg-transparent text-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-full font-bold cursor-pointer border border-white text-xs sm:text-sm md:text-base w-full sm:w-auto'
+                whileHover={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  borderColor: '#0091a4',
+                  y: -2
+                }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+              >
+                View Pricing &amp; Packages
+              </motion.button>
+            </div>
+            <p className='text-white/70 text-[11px] sm:text-xs md:text-sm font-medium text-center'>
+              30-minute call • Clear next steps
+            </p>
           </div>
 
 
@@ -211,18 +222,17 @@ const Hero = () => {
                 </div>
               </div>
               {/* Text content */}
-              <div className='relative w-full h-full flex items-center justify-center p-4 sm:p-6' style={{ zIndex: 10 }}>
-                <div className='text-center text-white relative' style={{ zIndex: 20 }}>
+              <div className='relative w-full h-full flex items-center justify-center p-5 sm:p-6 md:p-7' style={{ zIndex: 10 }}>
+                <div className='text-center text-white relative max-w-[92%] sm:max-w-[88%] mx-auto' style={{ zIndex: 20 }}>
                   <motion.h3
-                    className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 drop-shadow-2xl'
+                    className='text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-tight mb-2 sm:mb-3 drop-shadow-2xl'
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400 }}
                   >
-                    <Counter end={200} suffix="+" />
+                    Security &amp; Compliance for SaaS &amp; Cloud Teams
                   </motion.h3>
-                  <p className='text-xs sm:text-sm md:text-base font-medium text-white leading-tight drop-shadow-lg'>
-                    Companies<br />
-                    Secured & Protected
+                  <p className='text-[11px] sm:text-xs md:text-sm font-medium text-white leading-snug drop-shadow-lg'>
+                    Supporting growing companies with structured, practical security
                   </p>
                 </div>
               </div>
@@ -266,18 +276,17 @@ const Hero = () => {
                 />
               </div>
               {/* Text content */}
-              <div className='relative w-full h-full flex items-center justify-center p-4 sm:p-6' style={{ zIndex: 10 }}>
-                <div className='text-center text-white relative' style={{ zIndex: 20 }}>
+              <div className='relative w-full h-full flex items-center justify-center p-5 sm:p-6 md:p-7' style={{ zIndex: 10 }}>
+                <div className='text-center text-white relative max-w-[92%] sm:max-w-[88%] mx-auto' style={{ zIndex: 20 }}>
                   <motion.h3
-                    className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 drop-shadow-2xl'
+                    className='text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-tight mb-2 sm:mb-3 drop-shadow-2xl'
                     whileHover={{ scale: 1.1, rotate: [0, -2, 2, 0] }}
                     transition={{ type: 'spring', stiffness: 400 }}
                   >
-                    SOC 2 Ready
+                    SOC 2 &amp; ISO 27001 Readiness
                   </motion.h3>
-                  <p className='text-xs sm:text-sm md:text-base font-medium text-white leading-tight drop-shadow-lg'>
-                    Compliance<br />
-                    made simple
+                  <p className='text-[11px] sm:text-xs md:text-sm font-medium text-white leading-snug drop-shadow-lg'>
+                    Clear, step-by-step preparation aligned with audit requirements
                   </p>
                 </div>
               </div>
@@ -331,18 +340,17 @@ const Hero = () => {
                 </div>
               </div>
               {/* Text content */}
-              <div className='relative w-full h-full flex items-center justify-center p-4 sm:p-6' style={{ zIndex: 10 }}>
-                <div className='text-center text-black relative' style={{ zIndex: 20 }}>
+              <div className='relative w-full h-full flex items-center justify-center p-5 sm:p-6 md:p-7' style={{ zIndex: 10 }}>
+                <div className='text-center text-black relative max-w-[92%] sm:max-w-[88%] mx-auto' style={{ zIndex: 20 }}>
                   <motion.h3
-                    className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 text-gray-900 drop-shadow-2xl'
+                    className='text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-tight mb-2 sm:mb-3 text-gray-900 drop-shadow-2xl'
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400 }}
                   >
-                    <Counter end={500} suffix="+" />
+                    Risk &amp; Compliance Assessments
                   </motion.h3>
-                  <p className='text-xs sm:text-sm md:text-base font-medium text-gray-700 leading-tight drop-shadow-lg'>
-                    Security<br />
-                    Assessments
+                  <p className='text-[11px] sm:text-xs md:text-sm font-medium text-gray-700 leading-snug drop-shadow-lg'>
+                    Identify gaps, prioritize actions, and move forward with clarity
                   </p>
                 </div>
               </div>
@@ -405,18 +413,17 @@ const Hero = () => {
                 ))}
               </div>
               {/* Text content */}
-              <div className='relative w-full h-full flex items-center justify-center p-4 sm:p-6' style={{ zIndex: 10 }}>
-                <div className='text-center text-white relative' style={{ zIndex: 20 }}>
+              <div className='relative w-full h-full flex items-center justify-center p-5 sm:p-6 md:p-7' style={{ zIndex: 10 }}>
+                <div className='text-center text-white relative max-w-[92%] sm:max-w-[88%] mx-auto' style={{ zIndex: 20 }}>
                   <motion.h3
-                    className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 drop-shadow-2xl'
+                    className='text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-tight mb-2 sm:mb-3 drop-shadow-2xl'
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400 }}
                   >
-                    vCISO Support
+                    Ongoing vCISO &amp; Advisory
                   </motion.h3>
-                  <p className='text-xs sm:text-sm md:text-base font-medium text-white leading-tight drop-shadow-lg'>
-                    Strategic security<br />
-                    leadership
+                  <p className='text-[11px] sm:text-xs md:text-sm font-medium text-white leading-snug drop-shadow-lg'>
+                    Strategic guidance, reporting, and security leadership when you need it
                   </p>
                 </div>
               </div>
@@ -477,23 +484,25 @@ const Hero = () => {
                 ))}
               </div>
               {/* Text content */}
-              <div className='relative w-full h-full flex items-center justify-center p-4 sm:p-6' style={{ zIndex: 10 }}>
-                <div className='text-center text-white relative' style={{ zIndex: 20 }}>
+              <div className='relative w-full h-full flex items-center justify-center p-5 sm:p-6 md:p-7' style={{ zIndex: 10 }}>
+                <div className='relative z-20 w-full max-w-[92%] sm:max-w-[88%] mx-auto flex flex-col items-center text-center text-white'>
                   <motion.h3
-                    className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 drop-shadow-2xl'
+                    className='text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-tight mb-2 sm:mb-3 drop-shadow-2xl'
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400 }}
                   >
-                    24/7 Monitoring
+                    Audit-Ready Documentation
                   </motion.h3>
-                  <p className='text-xs sm:text-sm md:text-base font-medium text-white leading-tight drop-shadow-lg'>
-                    Continuous threat<br />
-                    detection & response
+                  <p className='text-[11px] sm:text-xs md:text-sm font-medium text-white leading-snug drop-shadow-lg mx-auto'>
+                    Policies, controls, and evidence prepared for compliance and due diligence
                   </p>
                 </div>
               </div>
             </motion.div>
           </div>
+          <p className='text-white/75 text-xs sm:text-sm md:text-base font-medium text-center mt-4 sm:mt-6 px-2'>
+            Delivered by experienced security and compliance professionals
+          </p>
         </div>
       </div>
     </div>

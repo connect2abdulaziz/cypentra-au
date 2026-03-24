@@ -67,43 +67,43 @@ const Whychooseus = () => {
     {
       bg: 'bg-[#0091a4]',
       icon: Computer,
-      title: 'Security chaos and uncertainty',
-      description: 'Policies scattered across teams, unclear responsibilities, and no audit trail.',
+      title: 'Step 1 - Assessment & Gap Analysis',
+      description: 'Understand your current security posture, identify gaps, and define clear next steps.',
       iconBg: 'bg-white'
     },
     {
       bg: 'bg-white',
       icon: Asterisk,
-      title: 'Delays and lost trust',
-      description: 'Compliance deadlines missed, failed customer security questionnaires, and reputational risk.',
+      title: 'Step 2 - Security Foundations',
+      description: 'Establish policies, controls, and cloud security baselines aligned with compliance requirements.',
       iconBg: 'bg-[#0091a4]'
     },
     {
       bg: 'bg-[#0091a4]',
       icon: Wrench,
-      title: 'Clear structure and ongoing support',
-      description: 'Cypentra\'s packages deliver defined steps, templates, and vCISO guidance that make security part of daily operations.',
+      title: 'Step 3 - Implementation & Documentation',
+      description: 'Build your security framework and prepare audit-ready documentation and evidence.',
       iconBg: 'bg-white'
     },
     {
       bg: 'bg-white',
       icon: Box,
-      title: 'SOC 2 & ISO Readiness Guidance',
-      description: 'Get structured support to prepare, align policies, and collect audit evidence without slowing down development.',
+      title: 'Step 4 - Cloud Security & Hardening',
+      description: 'Secure your AWS, Azure, or GCP environment with best-practice configurations.',
       iconBg: 'bg-[#0091a4]'
     },
     {
       bg: 'bg-[#0091a4]',
       icon: Rainbow,
-      title: 'Continuous Cloud Protection',
-      description: 'Detect and resolve misconfigurations across AWS, Azure, or GCP.',
+      title: 'Step 5 - Testing & Validation',
+      description: 'Optional penetration testing and validation to ensure your controls are effective.',
       iconBg: 'bg-white'
     },
     {
       bg: 'bg-white',
       icon: HandFist,
-      title: 'vCISO Support When You Need It',
-      description: 'Ongoing strategic guidance and clear actions for your engineering teams.',
+      title: 'Step 6 - Ongoing vCISO Support',
+      description: 'Continuous guidance, reporting, and strategic support as your business grows.',
       iconBg: 'bg-[#0091a4]'
     }
   ]
@@ -116,15 +116,13 @@ const Whychooseus = () => {
             ref={titleRef}
             className='text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight sm:leading-relaxed'
           >
-            Why Choose a <span className='bg-[#0091a4] text-black px-1 sm:px-2'>Structured</span> <br /> Security <span className='bg-[#0091a4]  text-black px-1 sm:px-2'>Package?</span>
+            Your Roadmap to Security &amp; Compliance
           </h2>
           <p
             ref={descriptionRef}
             className='text-xs sm:text-sm md:text-base lg:text-lg text-white/80 max-w-3xl'
           >
-            Many startups handle security reactively — after an incident or audit requirement.
-            Our packages address this by giving structure, clarity, and ongoing visibility before
-            problems occur.
+            A clear, structured path to SOC 2, ISO 27001, and cloud security - designed for Australian SaaS and growing tech teams.
           </p>
         </div>
 
@@ -158,6 +156,14 @@ const Whychooseus = () => {
               </motion.div>
             )
           })}
+        </div>
+        <div className='mt-6 sm:mt-8 text-center text-white/80'>
+          <p className='text-sm sm:text-base md:text-lg font-medium'>
+            From initial assessment to audit readiness
+          </p>
+          <p className='text-xs sm:text-sm md:text-base mt-1'>
+            Typical timeline: 4-8 weeks depending on scope and readiness
+          </p>
         </div>
       </div>
     </section>

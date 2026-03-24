@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import { CartProvider } from "@/contexts/CartContext";
 import Chatbot from "@/components/Chatbot/Chatbot";
+import WhatsAppFloatingButton from "@/components/Common/WhatsAppFloatingButton";
 
 // Cyber font for headings (commented out)
 // import { Orbitron } from "next/font/google";
@@ -169,6 +170,7 @@ export default function RootLayout({ children }) {
         <CartProvider>
           {children}
           <Chatbot />
+          <WhatsAppFloatingButton />
         </CartProvider>
       </body>
     </html>

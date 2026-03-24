@@ -8,6 +8,7 @@ export default function CypentraArchitecture() {
   const [isAnimating, setIsAnimating] = useState(true);
   const canvasRef = useRef(null);
   const router = useRouter();
+  const calendlyUrl = 'https://calendly.com/cypentra-consultation/30min';
 
   const services = [
     {
@@ -144,6 +145,11 @@ export default function CypentraArchitecture() {
 
   const handleClick = () => {
     router.push('/packages');
+  }
+
+  const handleBookCall = (e) => {
+    e.stopPropagation();
+    window.location.href = calendlyUrl;
   }
 
   return (
@@ -410,10 +416,10 @@ export default function CypentraArchitecture() {
               <div className="absolute -bottom-2 left-0 right-0 h-1 bg-linear-to-r from-transparent via-[#0091a4] to-transparent opacity-50" />
             </span>
             <br />
-            <span className="text-white">COVERING EVERY HOLE</span>
+            <span className="text-white">Structured Security &amp; Compliance — End to End</span>
           </h1>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed px-2">
-            Comprehensive protection that connects every layer of your security posture.
+            A comprehensive approach that connects every layer of your security and compliance journey.
           </p>
         </div>
 
@@ -576,6 +582,25 @@ export default function CypentraArchitecture() {
               </span>
             </h2>
           </div>
+        </div>
+
+        <div className="mb-12 sm:mb-16 md:mb-20 max-w-3xl mx-auto rounded-xl border border-cyan-500/20 bg-cyan-500/5 p-4 sm:p-6 md:p-8 text-center pointer-events-auto">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2">
+            Ready to move forward?
+          </h3>
+          <p className="text-sm sm:text-base text-white/75 leading-relaxed mb-4 sm:mb-5">
+            We&apos;ll walk you through your current security posture, identify gaps, and outline clear next steps.
+          </p>
+          <p className="text-cyan-300 text-sm sm:text-base font-medium mb-3">
+            Speak with a security advisor
+          </p>
+          <button
+            onClick={handleBookCall}
+            className="inline-flex items-center gap-2 rounded-full bg-[#0091a4] text-black font-semibold px-5 sm:px-6 py-2.5 sm:py-3 hover:shadow-lg hover:shadow-cyan-500/40 transition-all duration-300"
+          >
+            Book a Call
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
 
         {/* Features - Stack on mobile */}
