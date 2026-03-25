@@ -5,7 +5,7 @@ import React from 'react'
 const WhatsAppFloatingButton = () => {
   const phoneNumber = '12818607832'
   const message = encodeURIComponent('Hi, I have a question about your security services')
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
+  const whatsappUrl = 'https://api.whatsapp.com/send/?phone=966500450767&text=Hello%2C+I%27m+contacting+from+the+Cypentra+website+regarding+PDPL+advisory+services.%0ACompany+name%3A%0AIndustry%3A%0ABrief+requirement%3A&type=phone_number&app_absent=0'
 
   return (
     <a
